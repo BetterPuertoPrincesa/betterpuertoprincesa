@@ -1,3 +1,12 @@
+## [1.13.1](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.13.0...v1.13.1) (2026-11-02)
+
+### Bug Fixes
+
+- **document:** give the not-found page the regular page header ([#61](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/61)) ([2a5d65f](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/2a5d65fe1d6fd1dc87c5d1c5c0f0ec3c7afd9874))
+- **nav:** keep a section highlighted on its dropdown pages ([#60](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/60)) ([f1a3e90](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/f1a3e90bd5e12e6b1c894a31bad94106b5082d5f))
+- point GitHub links at the BetterPuertoPrincesa org repo ([#62](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/62)) ([c5d983a](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/c5d983af3db9ef1bb3246f44a1056af9016933c5))
+- **volunteer:** make the popup close button stand out from the branch art ([#59](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/59)) ([65a22f9](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/65a22f95675d08d453c0beaf58019b392b53f8ed))
+
 ## [1.13.0](https://github.com/hmcldryl/betterpuertoprincesa/compare/v1.12.3...v1.13.0) (2026-10-30)
 
 ### Features
