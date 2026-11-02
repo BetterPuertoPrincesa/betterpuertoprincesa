@@ -11,7 +11,7 @@ import { cn, searchShortcutLabel } from '../../lib/utils';
 import SearchModal from '../search/SearchModal';
 
 const HOTLINE_ITEMS = hotlines.map(h => `${h.label}: ${h.number}`);
-const REPO_URL = 'https://github.com/hmcldryl/betterpuertoprincesa';
+const REPO_URL = 'https://github.com/BetterPuertoPrincesa/betterpuertoprincesa';
 
 function LanguageToggle({
   language,

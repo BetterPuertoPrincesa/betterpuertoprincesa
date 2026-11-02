@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { SocialIcon } from '../ui/SocialIcon';
 
 const isExternal = (href: string) => /^https?:\/\//.test(href);
-const REPO_URL = 'https://github.com/hmcldryl/betterpuertoprincesa';
+const REPO_URL = 'https://github.com/BetterPuertoPrincesa/betterpuertoprincesa';
 
 const FooterLink: React.FC<{
   href: string;

@@ -98,7 +98,7 @@ export const footerNavigation = {
     },
     {
       label: 'GitHub',
-      href: 'https://github.com/hmcldryl/betterpuertoprincesa',
+      href: 'https://github.com/BetterPuertoPrincesa/betterpuertoprincesa',
     },
     { label: 'Discord', href: 'https://discord.gg/DzwTq7MjfS' },
   ] as { label: string; href: string | null }[],
