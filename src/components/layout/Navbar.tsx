@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Menu, ChevronDown, Phone, Search } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
-import type { LanguageType } from '../../types/index';
-import { Link, NavLink } from 'react-router-dom';
+import type { LanguageType, NavigationItem } from '../../types/index';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../i18n/languages';
 import { hotlines } from '../../data/hotlines';
@@ -89,11 +89,22 @@ const HIGHLIGHT_CLASSES =
 const navLabel = (label: string) =>
   `navbar.${label.replace(' ', '').toLowerCase()}`;
 
+// A top-level item stays highlighted on its own pages and on its dropdown
+// pages, e.g. Services on /markets and /fare-calculator.
+function isSectionActive(item: NavigationItem, pathname: string) {
+  if (item.href === '/') return pathname === '/';
+  const section = `/${item.href.split('/')[1]}`;
+  return [section, ...(item.children ?? []).map(c => c.href)].some(
+    href => pathname === href || pathname.startsWith(`${href}/`)
+  );
+}
+
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const { t, i18n } = useTranslation('common');
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -211,17 +222,17 @@ const Navbar: React.FC = () => {
               <div key={item.label} className="group relative">
                 <NavLink
                   to={item.href}
-                  end={item.href === '/'}
-                  className={({ isActive }) =>
-                    cn(
+                  className={() => {
+                    const isActive = isSectionActive(item, pathname);
+                    return cn(
                       'relative flex items-center rounded-full px-3 py-2 text-sm font-bold text-gray-800 transition-colors hover:bg-balayong-50 hover:text-balayong-800',
                       isActive && 'bg-balayong-100 text-balayong-800',
                       item.highlight && HIGHLIGHT_CLASSES,
                       item.highlight &&
                         isActive &&
                         'ring-2 ring-balayong-200 ring-offset-1'
-                    )
-                  }
+                    );
+                  }}
                 >
                   {t(navLabel(item.label))}
                   {item.highlight && <ImportantBadge corner />}

@@ -1,5 +1,6 @@
 import Section from '../components/ui/Section';
 import Breadcrumbs from '../components/ui/Breadcrumbs';
+import PageHeader from '../components/ui/PageHeader';
 import { Heading } from '../components/ui/Heading';
 import { Text } from '../components/ui/Text';
 import { Banner } from '../components/ui/Banner';
@@ -152,21 +153,23 @@ export default function Document({
         <Helmet>
           <meta name="robots" content="noindex" />
         </Helmet>
-        <Section className="!py-4 !bg-gray-50">
-          <Breadcrumbs items={breadcrumbs} />
-        </Section>
-        <Section className="!pt-8 mb-12">
-          <Banner
-            type="error"
-            title={t('document.notFoundTitle')}
-            description={t('document.notFoundDescription')}
-            icon
-          />
-          <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
-            <Link to="/services" className="text-primary-700 underline">
+        <PageHeader
+          title={t('document.notFoundTitle')}
+          subtitle={t('document.notFoundDescription')}
+          breadcrumbs={breadcrumbs}
+        />
+        <Section className="mb-12">
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              to="/services"
+              className="rounded-full bg-primary-700 px-6 py-3 text-center font-bold text-white transition-colors hover:bg-primary-800"
+            >
               {t('document.browseServices')}
             </Link>
-            <Link to="/" className="text-primary-700 underline">
+            <Link
+              to="/"
+              className="rounded-full border border-gray-300 px-6 py-3 text-center font-bold text-gray-800 transition-colors hover:bg-gray-50"
+            >
               {t('document.goHome')}
             </Link>
           </div>
