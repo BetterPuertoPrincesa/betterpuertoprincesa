@@ -2,11 +2,11 @@
 
 A community-made guide to city services in Puerto Princesa, Palawan.
 
-[![Created Badge](https://badges.pufler.dev/created/hmcldryl/betterpuertoprincesa)](https://github.com/hmcldryl/betterpuertoprincesa/)
-[![Updated Badge](https://badges.pufler.dev/updated/hmcldryl/betterpuertoprincesa)](https://github.com/hmcldryl/betterpuertoprincesa/)
-[![Visits Badge](https://badges.pufler.dev/visits/hmcldryl/betterpuertoprincesa)](https://github.com/hmcldryl/betterpuertoprincesa/)
+[![Created Badge](https://badges.pufler.dev/created/BetterPuertoPrincesa/betterpuertoprincesa)](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/)
+[![Updated Badge](https://badges.pufler.dev/updated/BetterPuertoPrincesa/betterpuertoprincesa)](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/)
+[![Visits Badge](https://badges.pufler.dev/visits/BetterPuertoPrincesa/betterpuertoprincesa)](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/)
 
-![Version](https://img.shields.io/github/package-json/v/hmcldryl/betterpuertoprincesa?color=green)
+![Version](https://img.shields.io/github/package-json/v/BetterPuertoPrincesa/betterpuertoprincesa?color=green)
 ![License](https://img.shields.io/badge/license-CC0%201.0-blue)
 
 ## About
@@ -37,4 +37,4 @@ Follow us on Facebook for updates, or come say hi on Discord if you have questio
 
 ## Contributors
 
-[![Contributors Display](https://badges.pufler.dev/contributors/hmcldryl/betterpuertoprincesa?size=50&padding=5&perRow=10&bots=true)](https://github.com/hmcldryl/betterpuertoprincesa)
+[![Contributors Display](https://badges.pufler.dev/contributors/BetterPuertoPrincesa/betterpuertoprincesa?size=50&padding=5&perRow=10&bots=true)](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa)
