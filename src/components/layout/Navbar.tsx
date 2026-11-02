@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { X, Menu, ChevronDown, Phone, Search } from 'lucide-react';
+import {
+  X,
+  Menu,
+  ChevronDown,
+  ExternalLink,
+  Phone,
+  Search,
+} from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
 import type { LanguageType, NavigationItem } from '../../types/index';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../i18n/languages';
 import { hotlines } from '../../data/hotlines';
 import { Ticker } from '../ui/Ticker';
-import { cn, searchShortcutLabel } from '../../lib/utils';
+import { cn, isExternal, searchShortcutLabel } from '../../lib/utils';
 import SearchModal from '../search/SearchModal';
 
 const HOTLINE_ITEMS = hotlines.map(h => `${h.label}: ${h.number}`);
@@ -92,10 +99,45 @@ const navLabel = (label: string) =>
 // A top-level item stays highlighted on its own pages and on its dropdown
 // pages, e.g. Services on /markets and /fare-calculator.
 function isSectionActive(item: NavigationItem, pathname: string) {
+  if (isExternal(item.href)) return false;
   if (item.href === '/') return pathname === '/';
   const section = `/${item.href.split('/')[1]}`;
   return [section, ...(item.children ?? []).map(c => c.href)].some(
     href => pathname === href || pathname.startsWith(`${href}/`)
+  );
+}
+
+// Top-level nav items can point to sister sites (e.g. the budget portal);
+// those open in a new tab with a small external-link icon.
+function NavItemLink({
+  href,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  className: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+}) {
+  if (!isExternal(href)) {
+    return (
+      <Link to={href} className={className} onClick={onClick}>
+        {children}
+      </Link>
+    );
+  }
+  return (
+    <a
+      href={href}
+      className={className}
+      onClick={onClick}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+      <ExternalLink className="ml-1 h-3.5 w-3.5" aria-hidden="true" />
+    </a>
   );
 }
 
@@ -220,26 +262,24 @@ const Navbar: React.FC = () => {
           <div className="hidden items-center gap-0.5 xl:gap-1 lg:flex shrink-0">
             {mainNavigation.map(item => (
               <div key={item.label} className="group relative">
-                <NavLink
-                  to={item.href}
-                  className={() => {
-                    const isActive = isSectionActive(item, pathname);
-                    return cn(
-                      'relative flex items-center rounded-full px-3 py-2 text-sm font-bold text-gray-800 transition-colors hover:bg-balayong-50 hover:text-balayong-800',
-                      isActive && 'bg-balayong-100 text-balayong-800',
-                      item.highlight && HIGHLIGHT_CLASSES,
-                      item.highlight &&
-                        isActive &&
-                        'ring-2 ring-balayong-200 ring-offset-1'
-                    );
-                  }}
+                <NavItemLink
+                  href={item.href}
+                  className={cn(
+                    'relative flex items-center rounded-full px-3 py-2 text-sm font-bold text-gray-800 transition-colors hover:bg-balayong-50 hover:text-balayong-800',
+                    isSectionActive(item, pathname) &&
+                      'bg-balayong-100 text-balayong-800',
+                    item.highlight && HIGHLIGHT_CLASSES,
+                    item.highlight &&
+                      isSectionActive(item, pathname) &&
+                      'ring-2 ring-balayong-200 ring-offset-1'
+                  )}
                 >
                   {t(navLabel(item.label))}
                   {item.highlight && <ImportantBadge corner />}
                   {item.children && (
                     <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
                   )}
-                </NavLink>
+                </NavItemLink>
                 {item.children && (
                   <div className="invisible absolute left-0 z-50 pt-2 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                     <div
@@ -348,9 +388,9 @@ const Navbar: React.FC = () => {
                 )}
               </div>
             ) : (
-              <Link
+              <NavItemLink
                 key={item.label}
-                to={item.href}
+                href={item.href}
                 onClick={closeMenu}
                 className={cn(
                   'flex items-center rounded-lg px-3 py-2.5 font-bold text-gray-800 hover:bg-balayong-50',
@@ -359,7 +399,7 @@ const Navbar: React.FC = () => {
               >
                 {t(navLabel(item.label))}
                 {item.highlight && <ImportantBadge />}
-              </Link>
+              </NavItemLink>
             )
           )}
           <a

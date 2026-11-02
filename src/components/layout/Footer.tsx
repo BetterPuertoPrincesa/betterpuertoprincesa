@@ -3,8 +3,8 @@ import { footerNavigation } from '../../data/navigation';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { SocialIcon } from '../ui/SocialIcon';
+import { isExternal } from '../../lib/utils';
 
-const isExternal = (href: string) => /^https?:\/\//.test(href);
 const REPO_URL = 'https://github.com/BetterPuertoPrincesa/betterpuertoprincesa';
 
 const FooterLink: React.FC<{
