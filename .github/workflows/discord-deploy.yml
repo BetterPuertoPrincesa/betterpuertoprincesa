@@ -12,11 +12,14 @@ on: status
 
 jobs:
   notify:
-    # Only Vercel's final states (skips "pending").
+    # Only Vercel's final states (skips "pending"). Release commits are
+    # skipped by vercel.json's ignoreCommand, and Vercel still reports those
+    # as "success" with "Canceled by Ignored Build Step", so leave them out.
     if: >-
       github.event.context == 'Vercel' &&
       github.event.sender.login == 'vercel[bot]' &&
-      contains(fromJSON('["success","failure","error"]'), github.event.state)
+      contains(fromJSON('["success","failure","error"]'), github.event.state) &&
+      !contains(github.event.description, 'Ignored Build Step')
     runs-on: ubuntu-24.04
     permissions: {}
     steps:
