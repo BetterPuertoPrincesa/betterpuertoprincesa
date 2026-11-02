@@ -1,3 +1,9 @@
+## [1.14.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.13.1...v1.14.0) (2026-11-02)
+
+### Features
+
+- **nav:** point Transparency to the budget site ([#63](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/63)) ([91bdc59](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/91bdc592824ee27f37f3b989dbdecb6ed7b544bb))
+
 ## [1.13.1](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.13.0...v1.13.1) (2026-11-02)
 
 ### Bug Fixes
