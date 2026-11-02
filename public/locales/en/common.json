@@ -6,7 +6,6 @@
     "hotlinesLabel": "In an emergency, call"
   },
   "landmark": {
-    "calloutText": "Know more about the\n\"Prinsesa ng Baybay\"",
     "title": "Ang Prinsesa ng Baybay",
     "subtitle": "The story behind the statue on the Puerto Princesa Baywalk.",
     "historyHeading": "How the statue came to be",
@@ -66,7 +65,6 @@
   "services": {
     "title": "City services",
     "description": "How to get permits, certificates, aid, and other help from the city, in plain words.",
-    "viewAllCard": "View All Services and Information",
     "loading": "Loading services...",
     "categoryNotFoundTitle": "We couldn't find that category",
     "categoryNotFoundDescription": "Check the link, or pick one from the list of city services.",
@@ -75,7 +73,6 @@
   "governmentActivity": {
     "title": "Inside city hall",
     "description": "Which office handles what, what they have announced, and the rules they work under.",
-    "viewAllCard": "View All Government Activities",
     "viewAll": "See every office"
   },
   "document": {
@@ -113,7 +110,6 @@
     "searchBarangayPlaceholder": "Search barangay...",
     "selectedBarangay": "Barangay",
     "mapHint": "Tap a barangay on the map to see its details.",
-    "barangayPopulation": "Pop. {{population}} (2024 Census)",
     "mapSourcesLabel": "Sources",
     "mapSourceBoundaries": "Barangay boundaries (NAMRIA/PSGC)",
     "mapSourcePopulation": "Barangay population, 2024 Census (PSA)",
@@ -122,7 +118,6 @@
     "tableCost": "Cost",
     "tableStatus": "Status",
     "contractorLabel": "Contractor",
-    "ongoingUnspecified": "Ongoing/unspecified",
     "viewFullProfile": "More city figures",
     "details": {
       "population": "Population (2024)",
@@ -186,10 +181,6 @@
   },
   "weatherMap": {
     "title": "Today's weather and city map",
-    "weatherHeading": "Weather",
-    "mapHeading": "Around the city proper",
-    "today": "Today",
-    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     "subtitle": "Weather now and for the next 5 days, sunrise and sunset, today's peso exchange rates, and a map of all 66 barangays."
   },
   "directory": {
