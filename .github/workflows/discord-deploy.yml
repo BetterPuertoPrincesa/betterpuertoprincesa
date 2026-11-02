@@ -4,34 +4,49 @@ name: Discord deploy notice
 # and deployment_status events but silently drops them, so deploys never show
 # up in the channel. Post Vercel's final deploy result to the plain webhook
 # instead. DISCORD_DEPLOY_WEBHOOK is the webhook URL without the /github suffix.
-on: deployment_status
+#
+# Listens to Vercel's commit status rather than deployment_status: since the
+# project moved to the BetterPuertoPrincesa Vercel team, Vercel only reports a
+# commit status and no longer creates GitHub deployments.
+on: status
 
 jobs:
   notify:
-    # Only Vercel's final states. Skips pending/in_progress, and skips the
-    # status the Production URL workflow adds so each deploy posts once.
+    # Only Vercel's final states (skips "pending").
     if: >-
-      contains(fromJSON('["success","failure","error"]'), github.event.deployment_status.state) &&
-      github.event.deployment_status.creator.login == 'vercel[bot]'
+      github.event.context == 'Vercel' &&
+      github.event.sender.login == 'vercel[bot]' &&
+      contains(fromJSON('["success","failure","error"]'), github.event.state)
     runs-on: ubuntu-24.04
     permissions: {}
     steps:
       - name: Post to Discord
         env:
           WEBHOOK: ${{ secrets.DISCORD_DEPLOY_WEBHOOK }}
-          STATE: ${{ github.event.deployment_status.state }}
-          ENVIRONMENT: ${{ github.event.deployment.environment }}
-          REF: ${{ github.event.deployment.ref }}
-          SHA: ${{ github.event.deployment.sha }}
-          DEPLOY_URL: ${{ github.event.deployment_status.environment_url }}
+          STATE: ${{ github.event.state }}
+          SHA: ${{ github.event.sha }}
+          # Branches whose tip is this commit. A merge to main is the
+          # production deploy; anything else is a preview.
+          BRANCHES: ${{ join(github.event.branches.*.name, ' ') }}
         run: |
           if [ -z "$WEBHOOK" ]; then
             echo "DISCORD_DEPLOY_WEBHOOK is not set, skipping."
             exit 0
           fi
 
-          if [ "$ENVIRONMENT" = "Production" ] && [ "$STATE" = "success" ]; then
-            DEPLOY_URL=https://betterpuertoprincesa.org
+          # The status links to the Vercel dashboard, which we don't share, so
+          # only production gets a link (to the live site).
+          DEPLOY_URL=""
+          if [[ " $BRANCHES " == *" main "* ]]; then
+            ENVIRONMENT=Production
+            REF=main
+            if [ "$STATE" = "success" ]; then
+              DEPLOY_URL=https://betterpuertoprincesa.org
+            fi
+          else
+            ENVIRONMENT=Preview
+            REF=${BRANCHES%% *}
+            REF=${REF:-unknown}
           fi
 
           case "$STATE" in
