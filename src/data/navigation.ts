@@ -38,7 +38,7 @@ export const mainNavigation: NavigationItem[] = [
     ],
   },
   { label: 'Statistics', href: '/statistics' },
-  { label: 'Transparency', href: '/transparency' },
+  { label: 'Transparency', href: 'https://budget.betterpuertoprincesa.org/' },
   { label: 'News', href: '/news' },
   { label: 'Mining Watch', href: '/mining-watch', highlight: true },
 ];
