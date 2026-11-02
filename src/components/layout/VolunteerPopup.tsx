@@ -117,7 +117,7 @@ export default function VolunteerPopup() {
           type="button"
           onClick={dismiss}
           aria-label={t('volunteer.close')}
-          className="absolute top-3 right-3 z-10 rounded-full p-2 text-gray-700 hover:bg-white/60"
+          className="absolute top-3 right-3 z-10 rounded-full bg-white/90 p-2 text-gray-800 shadow-sm transition-colors hover:bg-white"
         >
           <X className="h-5 w-5" aria-hidden="true" />
         </button>
