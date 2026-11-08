@@ -1,3 +1,9 @@
+## [1.16.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.15.0...v1.16.0) (2026-11-08)
+
+### Features
+
+- **services:** group service categories into general groups ([#68](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/68)) ([fb595e3](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/fb595e39c999adde12fbfdfe04b8b259c147bfcf)), closes [services#family](https://github.com/BetterPuertoPrincesa/services/issues/family)
+
 ## [1.15.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.14.0...v1.15.0) (2026-11-08)
 
 ### Features
