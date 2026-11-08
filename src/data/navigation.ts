@@ -34,7 +34,6 @@ export const mainNavigation: NavigationItem[] = [
   },
   { label: 'Statistics', href: '/statistics' },
   { label: 'Transparency', href: 'https://budget.betterpuertoprincesa.org/' },
-  { label: 'News', href: '/news' },
   { label: 'Blog', href: BLOG_URL },
 ];
 
