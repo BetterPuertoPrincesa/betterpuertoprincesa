@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Section from '../ui/Section';
 import { Heading } from '../ui/Heading';
 import NewsList from '../ui/NewsList';
+import BlogLink from '../ui/BlogLink';
 import BalayongBranch from '../ui/BalayongBranch';
 import { news } from '../../data/news';
 
@@ -32,6 +33,7 @@ export default function HomeNewsSection() {
       </div>
       <div className="relative max-w-4xl">
         <NewsList items={items} />
+        <BlogLink className="mt-6" />
       </div>
     </Section>
   );
