@@ -9,15 +9,19 @@
 
 groups:
   - id: 'family'
+    icon: 'HeartHandshake'
     name: 'Family, health, and school'
     description: 'Birth and marriage records, check-ups and medicine, schooling, and help for seniors, PWDs, and families in need.'
   - id: 'work'
+    icon: 'Briefcase'
     name: 'Business, jobs, and farming'
     description: 'Permits and business taxes, livelihood programs, and support for farmers and fisherfolk.'
   - id: 'home'
+    icon: 'House'
     name: 'Home and neighborhood'
     description: 'Housing and land use, roads and drainage, and garbage collection.'
   - id: 'safety'
+    icon: 'ShieldCheck'
     name: 'Safety and environment'
     description: 'Disaster preparedness, evacuation, and protecting the environment.'
 

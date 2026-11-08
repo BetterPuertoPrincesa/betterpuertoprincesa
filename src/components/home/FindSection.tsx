@@ -3,7 +3,18 @@ import Section from '../ui/Section';
 import { Heading } from '../ui/Heading';
 import CategoryList, { type CategoryItem } from '../ui/CategoryList';
 import { useTranslation } from '../../hooks/useTranslation';
-import { serviceCategories, governmentCategories } from '../../data/yamlLoader';
+import { serviceGroups, governmentCategories } from '../../data/yamlLoader';
+
+// Services are shown by general group, each listing its categories, so the
+// home page covers every service instead of the first few categories.
+const serviceGroupItems: CategoryItem[] = serviceGroups.map(group => ({
+  category: group.name,
+  slug: group.id,
+  description: group.description,
+  icon: group.icon,
+  href: `/services#${group.id}`,
+  examples: group.categories.map(c => c.category),
+}));
 
 const LIMIT = 4;
 
@@ -47,7 +58,7 @@ export default function FindSection() {
       <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         <Column
           title={t('services.title')}
-          items={serviceCategories.categories as CategoryItem[]}
+          items={serviceGroupItems}
           basePath="/services"
           moreHref="/services"
           moreLabel={t('services.viewAll')}

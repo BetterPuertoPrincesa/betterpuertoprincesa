@@ -21,6 +21,7 @@ export interface CategoryGroup {
   id: string;
   name: string;
   description: string;
+  icon: string;
 }
 
 export interface CategoryData {
