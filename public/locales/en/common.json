@@ -68,7 +68,8 @@
     "loading": "Loading services...",
     "categoryNotFoundTitle": "We couldn't find that category",
     "categoryNotFoundDescription": "Check the link, or pick one from the list of city services.",
-    "viewAll": "See every service"
+    "viewAll": "See every service",
+    "toolsTitle": "Everyday tools"
   },
   "governmentActivity": {
     "title": "Inside city hall",

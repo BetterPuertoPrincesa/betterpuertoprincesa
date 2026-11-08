@@ -1,16 +1,13 @@
 import type { NavigationItem } from '../types';
-import { serviceCategories as servicesData } from './yamlLoader';
+import { serviceGroups } from './yamlLoader';
+import { serviceTools } from './serviceTools';
 
-interface Subcategory {
-  name: string;
-  slug: string;
-}
-
-interface Category {
-  category: string;
-  slug: string;
-  subcategories: Subcategory[];
-}
+// The Services menu and footer link to the general groups on /services
+// rather than listing every category.
+const serviceGroupLinks = serviceGroups.map(group => ({
+  label: group.name,
+  href: `/services#${group.id}`,
+}));
 
 export const mainNavigation: NavigationItem[] = [
   { label: 'Home', href: '/' },
@@ -18,15 +15,12 @@ export const mainNavigation: NavigationItem[] = [
     label: 'Services',
     href: '/services',
     children: [
-      { label: 'Emergency Hotlines', href: '/hotlines' },
-      { label: 'Utility Advisories', href: '/advisories' },
-      { label: 'Public Markets', href: '/markets' },
-      { label: 'Tricycle Fare', href: '/fare-calculator' },
-      ...(servicesData.categories as Category[]).map(category => ({
-        label: category.category,
-        href: `/services/${category.slug}`,
+      ...serviceGroupLinks,
+      ...serviceTools.map(({ label, href }, i) => ({
+        label,
+        href,
+        dividerBefore: i === 0,
       })),
-      { label: 'Minimum Wage', href: '/minimum-wage' },
     ],
   },
   {
@@ -49,16 +43,8 @@ export const footerNavigation = {
       title: 'Services',
       links: [
         { label: 'Every service', href: '/services' },
-        { label: 'Minimum Wage', href: '/minimum-wage' },
-        { label: 'Utility Advisories', href: '/advisories' },
-        { label: 'Public Markets', href: '/markets' },
-        { label: 'Tricycle Fare', href: '/fare-calculator' },
-        ...(servicesData.categories as Category[])
-          .slice(0, 5)
-          .map(category => ({
-            label: category.category,
-            href: `/services/${category.slug}`,
-          })),
+        ...serviceGroupLinks,
+        { label: 'Everyday tools', href: '/services#tools' },
       ],
     },
     {

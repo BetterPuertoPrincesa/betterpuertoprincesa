@@ -12,11 +12,20 @@ export interface Category {
   slug: string;
   description: string;
   icon: string;
+  /** Id of the general group this category belongs to (services only). */
+  group?: string;
   subcategories?: Subcategory[]; // Keep for backward compatibility
+}
+
+export interface CategoryGroup {
+  id: string;
+  name: string;
+  description: string;
 }
 
 export interface CategoryData {
   categories: Category[];
+  groups?: CategoryGroup[];
   description: string;
 }
 
@@ -65,6 +74,13 @@ const categoryIndexMap: { [key: string]: string } = {
 export const serviceCategories: CategoryData = yaml.load(
   servicesYamlContent
 ) as CategoryData;
+
+// Service categories bundled under their general group, in the order the
+// groups are listed in services.yaml.
+export const serviceGroups = (serviceCategories.groups ?? []).map(group => ({
+  ...group,
+  categories: serviceCategories.categories.filter(c => c.group === group.id),
+}));
 
 export const governmentCategories: CategoryData = yaml.load(
   governmentActivitiesYamlContent

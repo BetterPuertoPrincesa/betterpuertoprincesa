@@ -8,4 +8,6 @@ export interface NavigationItem {
   children?: NavigationItem[];
   // Shows a small "important" badge next to the label.
   highlight?: boolean;
+  // Draws a thin rule above this item in a dropdown, to split it into parts.
+  dividerBefore?: boolean;
 }

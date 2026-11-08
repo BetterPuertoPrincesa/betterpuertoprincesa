@@ -35,7 +35,8 @@
     "loading": "Naglo-load ng mga serbisyo...",
     "categoryNotFoundTitle": "Hindi namin makita ang kategoryang iyan",
     "categoryNotFoundDescription": "Suriin ang link, o pumili mula sa listahan ng mga serbisyo.",
-    "viewAll": "Tingnan ang lahat ng serbisyo"
+    "viewAll": "Tingnan ang lahat ng serbisyo",
+    "toolsTitle": "Mga pang-araw-araw na tool"
   },
   "governmentActivity": {
     "title": "Sa loob ng city hall",

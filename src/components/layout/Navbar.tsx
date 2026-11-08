@@ -288,14 +288,18 @@ const Navbar: React.FC = () => {
                       aria-orientation="vertical"
                     >
                       {item.children.map(child => (
-                        <Link
-                          key={child.label}
-                          to={child.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-balayong-50 hover:text-balayong-800"
-                          role="menuitem"
-                        >
-                          {child.label}
-                        </Link>
+                        <React.Fragment key={child.label}>
+                          {child.dividerBefore && (
+                            <hr className="mx-3 my-1.5 border-gray-200" />
+                          )}
+                          <Link
+                            to={child.href}
+                            className="block rounded-lg px-3 py-2 text-sm text-gray-800 hover:bg-balayong-50 hover:text-balayong-800"
+                            role="menuitem"
+                          >
+                            {child.label}
+                          </Link>
+                        </React.Fragment>
                       ))}
                     </div>
                   </div>
@@ -375,14 +379,18 @@ const Navbar: React.FC = () => {
                 {activeMenu === item.label && (
                   <div className="ml-3 space-y-0.5 border-l-2 border-balayong-200 py-1 pl-3">
                     {item.children.map(child => (
-                      <Link
-                        key={child.label}
-                        to={child.href}
-                        onClick={closeMenu}
-                        className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-balayong-50"
-                      >
-                        {child.label}
-                      </Link>
+                      <React.Fragment key={child.label}>
+                        {child.dividerBefore && (
+                          <hr className="mx-3 my-1.5 border-gray-200" />
+                        )}
+                        <Link
+                          to={child.href}
+                          onClick={closeMenu}
+                          className="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-balayong-50"
+                        >
+                          {child.label}
+                        </Link>
+                      </React.Fragment>
                     ))}
                   </div>
                 )}
