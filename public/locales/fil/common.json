@@ -105,9 +105,9 @@
     "budgetBody": "Pinakamalaking bahagi ang napupunta sa {{sector}}: {{amount}}."
   },
   "news": {
-    "title": "Bago sa city hall",
-    "subtitle": "Mga kamakailang anunsyo ng pamahalaang lungsod, may link sa orihinal na post.",
-    "viewAll": "Basahin ang mas lumang balita",
+    "title": "Puerto Princesa sa balita",
+    "subtitle": "Mga kamakailang balita tungkol sa lungsod mula sa pamahalaang lungsod at mga lokal na news source. May link ang bawat isa sa orihinal na artikulo.",
+    "viewAll": "Tingnan ang lahat ng balita",
     "summaries": {
       "mayor-bayron-supports-lgsf-initiatives": "Muling ipinahayag ni Mayor Lucilo R. Bayron ang suporta ng Pamahalaang Lungsod ng Puerto Princesa sa mga pambansang prayoridad na programa matapos dumalo sa Cities Information Session tungkol sa Local Government Support Fund (LGSF).",
       "puerto-princesa-cmci-2024-ranking": "Nakuha ng Puerto Princesa ang ika-16 na puwesto sa pangkalahatan sa mga Highly Urbanized City sa Cities and Municipalities Competitiveness Index (CMCI), na may iskor na 40.23."
@@ -115,7 +115,9 @@
     "categories": {
       "Announcement": "Anunsyo"
     },
-    "opensOriginal": "Bubuksan ang orihinal na artikulo"
+    "opensOriginal": "Bubuksan ang orihinal na artikulo",
+    "blogPrompt": "Gusto mo ba ng sarili naming pagtalakay sa mga nangyayari?",
+    "blogLink": "Basahin ang blog ng BetterPuertoPrincesa"
   },
   "hotlines": {
     "title": "Mga numero sa emergency"
