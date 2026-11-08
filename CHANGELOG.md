@@ -1,3 +1,10 @@
+## [1.15.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.14.0...v1.15.0) (2026-11-08)
+
+### Features
+
+- **nav:** move Mining Watch to the footer only ([#67](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/67)) ([8ce456b](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/8ce456b2cae5bd43f0777b4714777a4d798430d5))
+- **news:** frame news as outside sources and link the blog ([#66](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/66)) ([af57d41](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/af57d41f186ebb909ffffe8254d9d43de316518b))
+
 ## [1.14.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.13.1...v1.14.0) (2026-11-02)
 
 ### Features
