@@ -1,3 +1,9 @@
+## [1.17.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.16.0...v1.17.0) (2026-11-08)
+
+### Features
+
+- **nav:** replace News with Blog in the top navigation ([#69](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/69)) ([59d9b16](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/59d9b168a2407edf791c097f3663a2285cbd5877))
+
 ## [1.16.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.15.0...v1.16.0) (2026-11-08)
 
 ### Features
