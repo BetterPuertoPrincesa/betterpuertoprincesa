@@ -1,6 +1,7 @@
 import type { NavigationItem } from '../types';
 import { serviceGroups } from './yamlLoader';
 import { serviceTools } from './serviceTools';
+import { BLOG_URL } from './news';
 
 // The Services menu and footer link to the general groups on /services
 // rather than listing every category.
@@ -33,7 +34,7 @@ export const mainNavigation: NavigationItem[] = [
   },
   { label: 'Statistics', href: '/statistics' },
   { label: 'Transparency', href: 'https://budget.betterpuertoprincesa.org/' },
-  { label: 'News', href: '/news' },
+  { label: 'Blog', href: BLOG_URL },
 ];
 
 export const footerNavigation = {
@@ -57,7 +58,7 @@ export const footerNavigation = {
         { label: 'Population and land', href: '/statistics' },
         { label: 'Where the money goes', href: '/transparency' },
         { label: 'In the news', href: '/news' },
-        { label: 'Our blog', href: 'https://blog.betterpuertoprincesa.org/' },
+        { label: 'Our blog', href: BLOG_URL },
         { label: 'Mining Watch', href: '/mining-watch' },
       ],
     },
