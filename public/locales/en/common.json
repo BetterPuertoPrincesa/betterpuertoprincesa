@@ -172,10 +172,12 @@
     "budgetBody": "The biggest share goes to {{sector}}: {{amount}}."
   },
   "news": {
-    "title": "What's new at city hall",
-    "subtitle": "Recent announcements from the city government, each linked to the original post.",
-    "viewAll": "Read older news",
-    "opensOriginal": "Opens the original article"
+    "title": "Puerto Princesa in the news",
+    "subtitle": "Recent stories about the city from the city government and local news sources. Each one links to the original article.",
+    "viewAll": "See all news",
+    "opensOriginal": "Opens the original article",
+    "blogPrompt": "Want our own take on what's happening?",
+    "blogLink": "Read the BetterPuertoPrincesa blog"
   },
   "hotlines": {
     "title": "Emergency numbers"

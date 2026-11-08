@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import type { NewsItem } from '../../data/news';
 
 // Each story is dated like a page torn from a desk calendar: day large in
-// the display serif, month and year beneath. Stories link to their source.
+// the display serif, month and year beneath. Each story names its
+// publisher and links to the original article.
 export default function NewsList({ items }: { items: NewsItem[] }) {
   const { t, i18n } = useTranslation('common');
   const dateLocale = i18n.resolvedLanguage === 'fil' ? 'fil-PH' : 'en-US';
@@ -36,6 +37,8 @@ export default function NewsList({ items }: { items: NewsItem[] }) {
               </time>
               <span className="min-w-0">
                 <span className="text-sm text-gray-600">
+                  <span className="font-bold text-gray-800">{item.source}</span>
+                  {' · '}
                   {t(`news.categories.${item.category}`, {
                     defaultValue: item.category,
                   })}

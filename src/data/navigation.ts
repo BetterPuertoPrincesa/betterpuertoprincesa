@@ -34,7 +34,6 @@ export const mainNavigation: NavigationItem[] = [
   { label: 'Statistics', href: '/statistics' },
   { label: 'Transparency', href: 'https://budget.betterpuertoprincesa.org/' },
   { label: 'News', href: '/news' },
-  { label: 'Mining Watch', href: '/mining-watch', highlight: true },
 ];
 
 export const footerNavigation = {
@@ -57,7 +56,8 @@ export const footerNavigation = {
         { label: 'City Government Website', href: 'https://puertoprincesa.ph' },
         { label: 'Population and land', href: '/statistics' },
         { label: 'Where the money goes', href: '/transparency' },
-        { label: 'City hall news', href: '/news' },
+        { label: 'In the news', href: '/news' },
+        { label: 'Our blog', href: 'https://blog.betterpuertoprincesa.org/' },
         { label: 'Mining Watch', href: '/mining-watch' },
       ],
     },
