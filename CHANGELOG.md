@@ -1,3 +1,9 @@
+## [1.18.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.17.0...v1.18.0) (2026-11-08)
+
+### Features
+
+- **services:** rework services page and home services list ([#70](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/issues/70)) ([d226c52](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/commit/d226c525b5f0b142aed527a1fef3b66c147c6181))
+
 ## [1.17.0](https://github.com/BetterPuertoPrincesa/betterpuertoprincesa/compare/v1.16.0...v1.17.0) (2026-11-08)
 
 ### Features
