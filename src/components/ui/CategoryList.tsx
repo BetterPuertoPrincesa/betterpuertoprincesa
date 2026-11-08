@@ -11,11 +11,16 @@ export interface CategoryItem {
   slug: string;
   description: string;
   icon: string;
+  /** Overrides the default `${basePath}/${slug}` link. */
+  href?: string;
+  /** Overrides the example pages read from the category's content index. */
+  examples?: string[];
 }
 
 // Real pages from the category's content index. Categories without one
 // (most government ones) show no examples rather than placeholder names.
 function examplesFor(item: CategoryItem) {
+  if (item.examples) return item.examples;
   return getCategoryPages(item.slug)
     .slice(0, MAX_EXAMPLES)
     .map(p => p.name);
@@ -49,7 +54,7 @@ export default function CategoryList({
         return (
           <li key={item.slug} className="border-b border-gray-200">
             <Link
-              to={`${basePath}/${item.slug}`}
+              to={item.href ?? `${basePath}/${item.slug}`}
               className="group -mx-3 flex items-start gap-4 rounded-lg px-3 py-4 transition-colors hover:bg-balayong-50"
             >
               <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-balayong-100 text-balayong-700">
